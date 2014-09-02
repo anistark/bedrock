@@ -18,7 +18,14 @@ $(function () {
             itemSelector: '.item',
             stamp: '.stamp'
         });
+
+        $('.promo-side-grid').masonry({
+            columnWidth: 300,
+            gutter: 20,
+            itemSelector: '.item'
+        });
     }
 
     initMasonry();
+
 });

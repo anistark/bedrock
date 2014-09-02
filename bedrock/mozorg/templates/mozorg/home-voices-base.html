@@ -1,0 +1,385 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "mozorg/base-resp.html" %}
+
+{% add_lang_files "mozorg/home" "mwc2014_promos" %}
+
+{% from 'macros.html' import facebook_share_url, twitter_share_url %}
+
+{% block page_title %}{{_('Home of the Mozilla Project')}}{% endblock %}
+{% block body_id %}home{% endblock %}
+{% block body_class %}lang-{{ LANG }}{% endblock %}
+
+{% block extra_meta %}
+<!-- validates bing webmaster tools -->
+<meta name="msvalidate.01" content="B7B177115A634927D608514DA17B2574" />
+<!-- YouTube Verification -->
+<meta name="google-site-verification" content="Mef8xJZ1-faaN2AdGdCfRFo5VeoXOSxjXNIzMsxcx94" />
+{% endblock %}
+
+{% block string_data %}{% endblock %}
+
+{% block extrahead %}{% endblock %}
+
+{% block js %}{% endblock %}
+
+{% block site_header %}
+  <header id="masthead">
+    <a href="{{ url('mozorg.home') }}" id="tabzilla" data-infobar="{{ settings.TABZILLA_INFOBAR_OPTIONS }}">Mozilla</a>
+
+    {% block site_header_nav %}
+    <nav id="nav-main" role="navigation">
+      <span class="toggle" role="button" aria-controls="nav-main-menu" aria-expanded="false" tabindex="0">{{_('Menu')}}</span>
+      <ul id="nav-main-menu">
+        <li><a href="{{ url('mozorg.contribute') }}">{{_('Volunteer')}}</a></li>
+        <li><a href="{{ url('mozorg.mission') }}">{{_('Our Mission')}}</a></li>
+        <li><a href="#">{{_('Mozilla Voices')}}</a></li>
+        <li><a href="{{ url('firefox.desktop.index') }}">{{_('Firefox')}}</a></li>
+      </ul>
+    </nav>
+    {% endblock %}
+
+    {% block site_header_logo %}{% endblock %}
+
+    {% block alt_header %}{% endblock %}
+
+    {% block subnav %}{% endblock %}
+
+    {% block breadcrumbs %}{% endblock %}
+
+  </header>
+{% endblock %}
+
+{% block content %}
+<main role="main">
+  <header class="mission">
+    <h1>{{ high_res_img('img/home/voices/mozilla-wordmark-white.png', {'alt': 'Mozilla', 'width': '378', 'height': '99'}) }}</h1>
+<!--     <p class="tagline">{{ _('Building the internet the world needs.') }}</p> -->
+  </header>
+
+  <section class="promo-grid-wrapper">
+    <div class="promo-grid-inner">
+      {% block promo_grid %}{% endblock %}
+    </div>
+    <div class="faces-grid-inner">
+      <ul class="faces-grid">
+        {% for i in range(1, 64)|list|shuffle %}
+          <li class="{{'face-' ~ '%03d'|format(i)}}"></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </section>
+
+  <section id="firefox-download-section">
+    <div class="container">
+      <header>
+        <a href="{{ url('firefox') }}" id="firefox-promo-link">
+          <h3><img src="{{ MEDIA_URL }}img/home/voices/firefox-logo-wordmark-white.png" alt="Firefox"></h3>
+          <h4>{{_('Committed to <strong>you, your privacy</strong> and an <strong>open Web</strong>')}}</h4>
+        </a>
+      </header>
+      {{ download_firefox(simple=true) }}
+    </div>
+  </section>
+
+  <section id="mozilla-voices">
+    <div class="container">
+      <h2>{{ _('Voices') }}</h2>
+      <div class="filter">
+        <h3>{{ _('Sort by') }}</h3>
+        <button type="button" id="technology-btn" aria-controls="voices-technology" class="selected">{{ _('Technology') }}</button>
+        <button type="button" id="privacy-btn" aria-controls="voices-privacy">{{ _('Privacy') }}</button>
+        <button type="button" id="open-web-btn" aria-controls="voices-open-web">{{ _('Open Web') }}</button>
+        <button type="button" id="mobile-btn" aria-controls="voices-mobile">{{ _('Mobile') }}</button>
+      </div>
+      <div class="voices-container selected" id="voices-technology">
+        <ul class="headlines">
+          <li role="presentation">
+            <a href="#" aria-controls="tech-article-1">
+              <h3>Technology headline 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="tech-article-2">
+              <h3>Technology headline 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="tech-article-3">
+              <h3>Technology headline 3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="tech-article-4">
+              <h3>Technology headline 4</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'</p>
+            </a>
+          </li>
+        </ul>
+        <div class="article-container">
+          <article id="tech-article-1">
+            <h3>Technology article 1</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="tech-article-2">
+            <h3>Technology article 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="tech-article-3">
+            <h3>Technology article 3</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="tech-article-4">
+            <h3>Technology article 4</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+        </div>
+      </div>
+      <div class="voices-container" id="voices-privacy">
+        <ul class="headlines">
+          <li role="presentation">
+            <a href="#" aria-controls="privacy-article-1">
+              <h3>Privacy headline 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="privacy-article-2">
+              <h3>Privacy headline 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="privacy-article-3">
+              <h3>Privacy headline 3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="privacy-article-4">
+              <h3>Privacy headline 4</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+        </ul>
+        <div class="article-container">
+          <article id="privacy-article-1">
+            <h3>Privacy article 1</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="privacy-article-2">
+            <h3>Privacy article 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="privacy-article-3">
+            <h3>Privacy article 3</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="privacy-article-4">
+            <h3>Privacy article 4</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+        </div>
+      </div>
+      <div class="voices-container" id="voices-open-web">
+        <ul class="headlines">
+          <li role="presentation">
+            <a href="#" aria-controls="open-web-article-1">
+              <h3>Open Web headline 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="open-web-article-2">
+              <h3>Open Web headline 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="open-web-article-3">
+              <h3>Open Web headline 3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="open-web-article-4">
+              <h3>Open Web headline 4</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+        </ul>
+        <div class="article-container">
+          <article id="open-web-article-1">
+            <h3>Open Web article 1</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="open-web-article-2">
+            <h3>Open Web article 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="open-web-article-3">
+            <h3>Open Web article 3</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="open-web-article-4">
+            <h3>Open Web article 4</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+        </div>
+      </div>
+      <div class="voices-container" id="voices-mobile">
+        <ul class="headlines">
+          <li role="presentation">
+            <a href="#" aria-controls="mobile-article-1">
+              <h3>Mobile headline 1</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="mobile-article-2">
+              <h3>Mobile headline 2</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="mobile-article-3">
+              <h3>Mobile headline 3</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#" aria-controls="mobile-article-4">
+              <h3>Mobile headline 4</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+          </li>
+        </ul>
+        <div class="article-container">
+          <article id="mobile-article-1">
+            <h3>Mobile article 1</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="mobile-article-2">
+            <h3>Mobile article 2</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="mobile-article-3">
+            <h3>Mobile article 3</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+          <article id="mobile-article-4">
+            <h3>Mobile article 4</h3>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="upcoming-events">
+    <div class="container">
+      <h2>{{ _('Upcoming events') }}</h2>
+
+      <div class="inner-container">
+        <a href="https://reps.mozilla.org/e/open-source-comes-to-campus-city-college-of-san-francisco/" class="featured-event">
+          <div class="event-map">
+            <time datetime="13-09-2014">
+              <abbr class="date-month" title="{{ _('September') }}">{{ _('Sep') }}</abbr>
+              <span class="date-day">13</span>
+            </time>
+            <img src="{{ media('img/home/voices/mapsmall.png') }}" alt="">
+          </div>
+
+          <div class="event-detail">
+            <h3 class="next">{{ _('Next event') }}</h3>
+            <h4>Open Source Comes to Campus: City College of San Francisco</h4>
+            <time datetime="13-09-2014">September 13, 2014</time>
+            <p class="event-location">CCSF Ocean Campus Batmale Hall , San Francisco, California, United States</p>
+          </div>
+        </a>
+
+        <ul class="events-list">
+          <li>
+            <a href="https://reps.mozilla.org/e/hive-india-at-maker-faire-new-york-2014/">
+              <time datetime="20-09-2014">
+                <abbr class="date-month" title="{{ _('September') }}">{{ _('Sep') }}</abbr>
+                <span class="date-day">20</span>
+              </time>
+              <div class="event-detail">
+                <h3>Hive India at Maker Faire New York 2014</h3>
+                <p class="event-location">New York Hall Of Science, Corona, New York, United States</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://reps.mozilla.org/e/google-summer-of-code/">
+              <time datetime="24-09-2014">
+                <abbr class="date-month" title="{{ _('September') }}">{{ _('Sep') }}</abbr>
+                <span class="date-day">24</span>
+              </time>
+              <div class="event-detail">
+                <h3>Google Summer of Code</h3>
+                <p class="event-location">Marriott and Hilton, San Jose, California, United States</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://reps.mozilla.org/e/initiation-to-maker-parties-in-utah/">
+              <time datetime="26-09-2014">
+                <abbr class="date-month" title="{{ _('September') }}">{{ _('Sep') }}</abbr>
+                <span class="date-day">26</span>
+              </time>
+              <div class="event-detail">
+                <h3>Initiation to Maker Parties in Utah</h3>
+                <p class="event-location">Harmons, Draper, Utah, United States</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a class="all-events" href="https://reps.mozilla.org/events/">See all events</a>
+    </div>
+  </section>
+
+  <section id="secondary-links">
+    <ul>
+      <li>
+        <a class="add-ons" href="https://addons.mozilla.org/">
+          <h2>{{ _('Add-ons') }}</h2>
+          <p>{{ _('Sed sodales interdum adipiscing. Nulla ut congue ligula purus augue.') }}</p>
+        </a>
+      </li>
+      <li>
+        <a class="careers" href="https://careers.mozilla.org/">
+          <h2>{{ _('Careers') }}</h2>
+          <p>{{ _('Sed sodales interdum adipiscing. Nulla ut congue ligula purus augue.') }}</p>
+        </a>
+      </li>
+      <li>
+        <a class="help" href="https://sumo.mozilla.org/">
+          <h2>{{ _('Need help?') }}</h2>
+          <p>{{ _('Sed sodales interdum adipiscing. Nulla ut congue ligula purus augue.') }}</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="newsletter-signup">
+    <div class="container">
+      {% if LANG == 'en-US' %}
+        {{ mozorg_newsletter_form() }}
+      {% else %}
+        {{ email_newsletter_form() }}
+      {% endif %}
+    </div>
+  </section>
+</main>
+
+{% endblock %}
+
+{% block email_form %}{% endblock %}

@@ -315,7 +315,11 @@ MINIFY_BUNDLES = {
             'css/mozorg/home-ie.less',
         ),
         'home-voices-a': (
-            'css/mozorg/home-voices-a.less',
+            'css/mozorg/home-voices-common.less',
+        ),
+        'home-voices-b': (
+            'css/mozorg/home-voices-common.less',
+            'css/mozorg/home-voices-b.less',
         ),
         'legal-eula': (
             'css/legal/eula.less',
@@ -631,7 +635,13 @@ MINIFY_BUNDLES = {
         ),
         'home-voices-a': (
             'js/libs/masonry.pkgd.js',
+            'js/mozorg/home-voices-common.js',
             'js/mozorg/home-voices-a.js',
+        ),
+        'home-voices-b': (
+            'js/libs/masonry.pkgd.js',
+            'js/mozorg/home-voices-common.js',
+            'js/mozorg/home-voices-b.js',
         ),
         'home-voices-a-ie9': (
             'js/libs/matchMedia.addListener.js',
