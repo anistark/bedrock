@@ -6,6 +6,10 @@ $(function () {
     'use strict';
 
     function initMasonry() {
+
+        // make sure the Firefox download promo always appears in the thirst row
+        $('.firefox-download').addClass('stamp');
+
         $('.faces-grid').masonry({
             columnWidth: 140,
             gutter: 20,
