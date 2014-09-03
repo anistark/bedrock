@@ -13,7 +13,7 @@ $(function () {
         } else {
             $promos.find('.promo-square, .promo-spacer').hide().removeClass('item');
         }
-        $promos.masonry();
+        //$promos.masonry();
     }
 
     function initFacesGrid() {

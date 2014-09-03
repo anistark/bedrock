@@ -17,26 +17,60 @@
 
 {% block promo_grid %}
   <ul class="promo-grid">
-    <li class="item promo-large-portrait voices-open-web">
+    <li class="item promo-large-portrait voices-open-web" tabindex="0">
+      <h2 class="primary go">{{ _('See why open systems matter') }}</h2>
       <a href="#">
-        <h2 class="go">{{ _('Voices: Learn why <strong>open matters</strong>') }}</h2>
+        <div class="secondary">
+          <h3>{{ _('Learn about the issues facing the Internet today.') }}</h3>
+          <p class="more">{{ _('Read the Open Standard') }}</p>
+        </div>
+        <div class="category">
+          <abbr class="os" title="{{ _('The Open Standard') }}">o/s</abbr> {{ _('Influence') }}
+        </div>
       </a>
     </li>
-    <li class="item promo-large-landscape net-nutrality">
-      <a href="#">
-        <h2 class="go">{{ _('“The Net<br> Neutrality Decision:<br> What Does it Mean?”') }}</h2>
+    <li class="item promo-large-landscape net-nutrality" tabindex="0">
+      <h2 class="primary go">{{ _('Stand with Mozilla to protect net neutrality') }}</h2>
+      <a href="https://sendto.mozilla.org/page/s/protect-net-neutrality">
+        <div class="secondary">
+          <h3>Tell U.S. Congress to protect a level playing field on the open Web.</h3>
+          <p class="more">{{ _('Write to your legislator') }}</p>
+        </div>
+        <div class="category">
+          <abbr class="os" title="{{ _('The Open Standard') }}">o/s</abbr> {{ _('Advocacy') }}
+        </div>
       </a>
     </li>
     <li class="item promo-spacer"></li>
     <li class="item promo-spacer"></li>
-    <li class="item promo-large-portrait maker-party">
-      <a href="https://party.webmaker.org/">
-        <h2 class="go"><img src="{{ MEDIA_URL }}img/home/voices/promos/maker-party/logo.png" alt="Maker Party"> Teach, Learn<br> &amp; <strong>Make</strong></h2>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-large-portrait sync" tabindex="0">
+      <h2 class="primary go">{{ _('Take your Web with you') }}</h2>
+      <a href="{{ url('firefox.sync') }}">
+        <div class="secondary">
+          <h3>{{ _('Access your bookmarks, tabs and more anywhere you use Firefox.') }}</h3>
+          <p class="more">{{ _('Get started with Sync') }}</p>
+        </div>
+        <div class="category">
+          <abbr class="os" title="{{ _('The Open Standard') }}">o/s</abbr> {{ _('Products') }}
+        </div>
       </a>
     </li>
-    <li class="item promo-large-landscape firefox-hello">
-      <a href="#">
-        <h2 class="go">{{ _('<strong>Firefox Hello</strong><br> Make a video Call') }}</h2>
+    <li class="item promo-large-landscape festival" tabindex="0">
+      <h2 class="primary go">{{ _('Help us build a truly global Web') }}</h2>
+      <a href="http://2014.mozillafestival.org/">
+        <div class="secondary">
+          <h3>{{ _('Join us October 24–26 to help make a Web filled with opportunity for all.') }}</h3>
+          <p class="more">{{ _('Come to the Mozilla Festival') }}</p>
+        </div>
+        <div class="category">
+          <abbr class="os" title="{{ _('The Open Standard') }}">o/s</abbr> {{ _('Education') }}
+        </div>
       </a>
     </li>
   </ul>
@@ -56,20 +90,19 @@
     </li>
     <li class="item promo-small-landscape webmaker">
       <a href="https://webmaker.org/">
-        <h2>{{ _('Become a <strong>Webmaker</strong>') }}</h2>
+        <h2>{{ _('Become a <strong>Webmaker</strong> today') }}</h2>
         <img src="{{ media('img/home/voices/promos/webmaker/webmaker-logo.png') }}" alt="">
       </a>
     </li>
     <li class="item promo-small-landscape sumo">
       <a href="https://support.mozilla.org/get-involved/">
-        <h2>{{ _('Join our<br> <strong>support<br> team</strong>') }}</h2>
+        <h2>{{ _('Meet the heroes of the Web') }}</h2>
       </a>
       <img src="{{ media('img/home/voices/promos/sumo/support-fox.png') }}" alt="">
     </li>
-    <li class="item promo-small-landscape net-nutrality">
-      <a href="https://sendto.mozilla.org/page/s/protect-net-neutrality">
-        <img src="{{ MEDIA_URL }}img/home/voices/promos/net-nutrality/logo.png" alt="Protect Net Nutrality">
-        <h2>{{ _('Stand with<br> <strong>Mozilla</strong>') }}</h2>
+    <li class="item promo-small-landscape open-news">
+      <a href="http://opennews.org/">
+        <h2>{{ _('Celebrate journalism on the open Web') }}</h2>
       </a>
     </li>
   </ul>
