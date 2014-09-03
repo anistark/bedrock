@@ -595,6 +595,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .promo-large-landscape.festival {
     background: #f37a7a;
+
+    h2 {
+        text-align: left;
+        background-image: url('/media/img/home/voices/promos/festival/logo.png');
+        background-position: 0 (@baseLine * 4);
+        background-repeat: no-repeat;
+        padding: (@baseLine * 4) (@baseLine * 2) (@baseLine / 2) 120px;
+        margin-left: @baseLine * 4;
+
+        &.go:after {
+            margin-left: -(62px);
+        }
+    }
 }
 
 .promo-large-landscape.net-nutrality {
@@ -606,6 +619,13 @@ h1, h2, h3, h4, h5, h6 {
 
     h2, h3, p {
         color: #4f6861;
+    }
+
+    h2 {
+        background-image: url('/media/img/home/voices/promos/sync/devices.png');
+        background-position: center (@baseLine * 2);
+        background-repeat: no-repeat;
+        padding: (@baseLine * 7) (@baseLine * 2) 0 (@baseLine * 2);
     }
 }
 
@@ -1554,7 +1574,22 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .promo-large-landscape {
-        width: @widthSquareGrid_3 - (@gridGutterWidth * 2);
+        width: @widthSquareGrid_2 - (@gridGutterWidth * 2);
+        height: 460px;
+    }
+
+    .promo-large-landscape.festival {
+
+        h2 {
+            text-align: center;
+            background-image: none;
+            padding: (@baseLine * 4) (@baseLine * 2) (@baseLine / 2) (@baseLine * 2);
+            margin-left: 0;
+
+            &.go:after {
+                margin-left: -(20px);
+            }
+        }
     }
 
     .promo-grid li {
@@ -1688,6 +1723,20 @@ h1, h2, h3, h4, h5, h6 {
     .promo-large-landscape {
         width: @widthSquareGrid_2 - (@gridGutterWidth * 2);
         height: 460px;
+    }
+
+    .promo-large-landscape.festival {
+
+        h2 {
+            text-align: center;
+            background-image: none;
+            padding: (@baseLine * 4) (@baseLine * 2) (@baseLine / 2) (@baseLine * 2);
+            margin-left: 0;
+
+            &.go:after {
+                margin-left: -(20px);
+            }
+        }
     }
 
     .promo-grid li {
