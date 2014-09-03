@@ -218,6 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 .promo-large-landscape,
 .promo-large-portrait {
     &> a {
+        visibility: hidden;
         position: absolute;
         top: 0;
         left: 0;
@@ -225,7 +226,8 @@ h1, h2, h3, h4, h5, h6 {
         bottom: 0;
         border: 5px solid transparent;
         border-top: none;
-        .transition(border .3s ease-in-out);
+        -webkit-transition: border .3s ease-in-out, visibility 0s .3s ease-in-out;
+                transition: border .3s ease-in-out, visibility 0s .3s ease-in-out;
 
         &:hover,
         &:focus {
@@ -248,7 +250,8 @@ h1, h2, h3, h4, h5, h6 {
         background: rgba(0, 0, 0, 0.1);
         -webkit-transition: -webkit-transform .3s ease-in-out;
         transition: transform .3s ease-in-out;
-        .transform(translateY(-150%));
+        -webkit-transform: translateY(-150%);
+        transform: translateY(-150%);
     }
 
     .os {
@@ -300,9 +303,15 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &.show {
-        // h2.go:after {
-        //     .transform(rotate(-90deg));
-        // }
+
+        &> a {
+            visibility: visible;
+            border: 5px solid rgb(0, 0, 0);
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-top: none;
+            -webkit-transition: border .3s ease-in-out, visibility .3s 0s ease-in-out;
+                    transition: border .3s ease-in-out, visibility .3s 0s ease-in-out;
+        }
 
         .category {
             .transform(translateY(0));
@@ -321,15 +330,6 @@ h1, h2, h3, h4, h5, h6 {
             -webkit-transition: opacity .3s .3s ease-in-out, visibility .3s .3s ease-in-out;
                     transition: opacity .3s .3s ease-in-out, visibility .3s .3s ease-in-out;
         }
-
-        > a {
-            &:hover,
-            &:focus {
-                border: 5px solid rgb(0, 0, 0);
-                border: 5px solid rgba(0, 0, 0, 0.1);
-                border-top: none;
-            }
-        }
     }
 
     h2 {
@@ -341,15 +341,13 @@ h1, h2, h3, h4, h5, h6 {
 
         &.go:after {
             position: absolute;
-            bottom: -55px;
+            bottom: -60px;
             left: 50%;
             width: 40px;
             height: 40px;
             margin-left: -20px;
             content: '';
             background: url(/media/img/home/voices/promos/go.png) top left no-repeat;
-            // -webkit-transition: -webkit-transform .3s ease-in-out;
-            // transition: transform .3s ease-in-out;
         }
     }
 
