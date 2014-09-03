@@ -45,14 +45,24 @@ h1, h2, h3, h4, h5, h6 {
 
 // @Header, @mission statement
 .mission {
+    position: relative;
     line-height: 1.1;
     width: 100%;
-    margin: (@baseLine * 2) auto;
+    margin: (@baseLine * 4) auto (@baseLine * 2) auto;
     padding-bottom: @baseLine;
     position: relative;
     text-align: center;
+    .clearfix();
+
+    .container {
+        width: @widthSquareGrid_8 - (@gridGutterWidth * 2);
+        padding: 0;
+    }
 
     h1 {
+        float: left;
+        width: 315px;
+        height: 90px;
         padding: 0 (@baseLine * 2);
         img {
             max-width: 100%;
@@ -60,13 +70,32 @@ h1, h2, h3, h4, h5, h6 {
         }
     }
 
-    .tagline {
-        .open-sans-light;
-        color: #ff9797;
-        font-size: 62px;
-        letter-spacing: -.025em;
+    .values {
+        position: relative;
+        float: right;
+        list-style-type: none;
         margin: 0;
-        padding: 0 @baseLine;
+        padding: 0 0 0 @baseLine;
+        width: 800px;
+        border-left: 1px solid #fff;
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+
+        li {
+            float: left;
+            margin: 0 0 (@baseLine / 2) 0;
+            padding: 0 (@baseLine * 2);
+            width: 310px;
+            text-align: left;
+            font-size: 28px;
+            .open-sans-light;
+            color: #fff;
+            line-height: 1.3;
+
+            strong {
+                .open-sans;
+                font-weight: normal;
+            }
+        }
     }
 }
 
@@ -764,12 +793,16 @@ h1, h2, h3, h4, h5, h6 {
             .transition(all .2s ease-in-out);
 
             &:hover,
-            &:focus,
+            &:focus {
+                border: 2px solid #0095dd;
+                cursor: pointer;
+            }
+
             &.selected {
                 color: #c0413c;
                 background: #fff;
                 border: 2px solid #c0413c;
-                cursor: pointer;
+                cursor: default;
             }
         }
     }
@@ -805,7 +838,18 @@ h1, h2, h3, h4, h5, h6 {
                 }
 
                 &:hover,
-                &:focus,
+                &:focus, {
+                    text-decoration: none;
+                    h3,
+                    p {
+                        color: #0095dd;
+                    }
+
+                    &:before {
+                        border: 2px solid #0095dd;
+                    }
+                }
+
                 &.selected {
                     text-decoration: none;
                     h3,
@@ -815,6 +859,10 @@ h1, h2, h3, h4, h5, h6 {
 
                     &:before {
                         border: 2px solid #c0413c;
+                    }
+
+                    &:hover {
+                        cursor: default;
                     }
                 }
 
@@ -997,7 +1045,7 @@ h1, h2, h3, h4, h5, h6 {
             a {
                 display: block;
                 margin-bottom: @baseLine;
-                border-bottom: 1px dotted #565a5c;
+                min-height: 70px;
             }
 
             a:hover,
@@ -1204,6 +1252,22 @@ h1, h2, h3, h4, h5, h6 {
         margin-left: -550px;
     }
 
+    .mission {
+        .container {
+            width: @widthSquareGrid_7 - (@gridGutterWidth * 2);
+        }
+
+        .values {
+            width: 660px;
+            padding: 0 0 0 @baseLine * 2;
+
+            li {
+                padding: 0 @baseLine 0 0;
+                width: 280px;
+            }
+        }
+    }
+
     .promo-grid li {
 
         &.firefox-download {
@@ -1287,6 +1351,23 @@ h1, h2, h3, h4, h5, h6 {
     .faces-grid-inner {
         width: @widthSquareGrid_6 - (@gridGutterWidth * 2);
         margin-left: -470px;
+    }
+
+    .mission {
+        .container {
+            width: @widthSquareGrid_6 - (@gridGutterWidth * 2);
+        }
+
+        .values {
+            width: 460px;
+
+            li {
+                float: none;
+                width: 100%;
+                padding: 0;
+                font-size: 20px;
+            }
+        }
     }
 
     .promo-grid li {
@@ -1381,6 +1462,23 @@ h1, h2, h3, h4, h5, h6 {
         margin-left: -390px;
     }
 
+    .mission {
+        .container {
+            width: @widthSquareGrid_5 - (@gridGutterWidth * 2);
+        }
+
+        .values {
+            width: 320px;
+
+            li {
+                float: none;
+                width: 100%;
+                padding: 0;
+                font-size: 20px;
+            }
+        }
+    }
+
     .promo-grid li {
 
         &.firefox-download {
@@ -1470,6 +1568,16 @@ h1, h2, h3, h4, h5, h6 {
     .faces-grid-inner {
         width: @widthSquareGrid_4 - (@gridGutterWidth * 2);
         margin-left: -310px;
+    }
+
+    .mission {
+        .container {
+            width: @widthSquareGrid_4 - (@gridGutterWidth * 2);
+        }
+
+        .values {
+            display: none;
+        }
     }
 
     .promo-grid li {
@@ -1571,6 +1679,23 @@ h1, h2, h3, h4, h5, h6 {
     .faces-grid-inner {
         width: @widthSquareGrid_3 - (@gridGutterWidth * 2);
         margin-left: -230px;
+    }
+
+    .mission {
+        .container {
+            width: @widthSquareGrid_3 - (@gridGutterWidth * 2);
+        }
+
+        h1 {
+            float: none;
+            width: 260px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .values {
+            display: none;
+        }
     }
 
     .promo-large-landscape {
@@ -1718,6 +1843,23 @@ h1, h2, h3, h4, h5, h6 {
     .faces-grid-inner {
         width: @widthSquareGrid_2 - (@gridGutterWidth * 2);
         margin-left: -150px;
+    }
+
+    .mission {
+        .container {
+            width: @widthSquareGrid_2 - (@gridGutterWidth * 2);
+        }
+
+        h1 {
+            float: none;
+            width: 260px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .values {
+            display: none;
+        }
     }
 
     .promo-large-landscape {

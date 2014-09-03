@@ -55,8 +55,15 @@
 {% block content %}
 <main role="main">
   <header class="mission">
-    <h1>{{ high_res_img('img/home/voices/mozilla-wordmark-white.png', {'alt': 'Mozilla', 'width': '378', 'height': '99'}) }}</h1>
-<!--     <p class="tagline">{{ _('Building the internet the world needs.') }}</p> -->
+    <div class="container">
+      <h1>{{ high_res_img('img/home/voices/mozilla-wordmark-white.png', {'alt': 'Mozilla', 'width': '315', 'height': '90'}) }}</h1>
+      <ul class="values">
+        <li>{{_('<strong>Fostering</strong> change')}}</li>
+        <li>{{_('<strong>Advocating</strong> openness')}}</li>
+        <li>{{_('<strong>Promoting</strong> standards')}}</li>
+        <li>{{_('<strong>Teaching</strong> the Web')}}</li>
+      </ul>
+    </div>
   </header>
 
   <section class="promo-grid-wrapper">
@@ -86,7 +93,7 @@
 
   <section id="mozilla-voices">
     <div class="container">
-      <h2>{{ _('Voices') }}</h2>
+      <h2>{{ _('The Open Standard') }}</h2>
       <div class="filter">
         <h3>{{ _('Sort by') }}</h3>
         <button type="button" id="technology-btn" aria-controls="voices-technology" class="selected">{{ _('Technology') }}</button>
