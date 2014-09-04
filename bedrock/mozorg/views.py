@@ -280,12 +280,14 @@ class HomeTestView(TemplateView):
     def get_template_names(self):
         version = self.request.GET.get('version', '')
 
-        if version == 'a2':
+        if version == 'a1':
+            template = 'mozorg/home-voices-a1.html'
+        elif version == 'a2':
             template = 'mozorg/home-voices-a2.html'
         elif version == 'b1':
             template = 'mozorg/home-voices-b1.html'
         else:
-            template = 'mozorg/home-voices-a1.html'
+            template = 'mozorg/home.html'
 
         return [template]
 

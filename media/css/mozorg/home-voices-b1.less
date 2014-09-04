@@ -74,10 +74,17 @@
     h2 {
         padding: (@baseLine * 4) @baseLine 0 @baseLine;
         margin-bottom: @baseLine;
-        .open-sans;
         font-size: 36px;
-        text-align: center;
         line-height: 1.2;
+
+        &.go:after {
+            -webkit-transition: -webkit-transform .3s ease-in-out;
+            transition: transform .3s ease-in-out;
+        }
+    }
+
+    &.show h2.go:after {
+        .transform(rotate(-90deg));
     }
 }
 
@@ -86,6 +93,10 @@
 
     &.show > a {
         border: 5px solid #da6d6d;
+    }
+
+    h2 {
+        font-size: 40px;
     }
 }
 
@@ -115,6 +126,11 @@
 
     &.show > a {
         border: 5px solid #64a39f;
+    }
+
+    h2 {
+        font-size: 40px;
+        padding: (@baseLine * 2) @baseLine 0 @baseLine;
     }
 }
 
