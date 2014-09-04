@@ -1,0 +1,110 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% extends "mozorg/home-voices-base.html" %}
+
+{% block extrahead %}
+  {{ css('home-voices-a1-b') }}
+{% endblock %}
+
+{% block js %}
+  <!--[if IE 9]>
+    {{ js('home-voices-a-ie9') }}
+  <![endif]-->
+  {{ js('home-voices-a') }}
+{% endblock %}
+
+{% block header_mission %}
+  <header class="mission">
+    <div class="container">
+      <h1>{{ high_res_img('img/home/voices/mozilla-wordmark-white.png', {'alt': 'Mozilla', 'width': '315', 'height': '90'}) }}</h1>
+      <ul class="values">
+        <li>{{_('<strong>Champions</strong> of open source')}}</li>
+        <li>{{_('<strong>Builders</strong> of open systems')}}</li>
+        <li>{{_('<strong>Defenders</strong> of open access')}}</li>
+        <li>{{_('<strong>Teachers</strong> of the open Web')}}</li>
+      </ul>
+    </div>
+  </header>
+{% endblock %}
+
+{% block promo_grid %}
+  <ul class="promo-grid">
+    <li class="item promo-large-portrait voices-open-web" tabindex="0">
+      <h2 class="primary go">{{ _('See why open systems matter') }}</h2>
+      <a href="#">
+        <div class="secondary">
+          <h3>{{ _('Learn <br>about the issues facing the Internet today.') }}</h3>
+          <p class="more">{{ _('Read the Open Standard') }}</p>
+        </div>
+      </a>
+    </li>
+    <li class="item promo-small-landscape webmaker">
+      <a href="https://webmaker.org/">
+        <h2>{{ _('Become a <strong>Webmaker</strong> today') }}</h2>
+        <img src="{{ media('img/home/voices/promos/webmaker/webmaker-logo.png') }}" alt="">
+      </a>
+    </li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-small-landscape firefox-download" tabindex="0">
+      <div class="primary">
+        <h2 class="go">{{ _('Download <strong>Firefox</strong>') }}</h2>
+        <img src="{{ media('img/home/voices/promos/download-firefox/firefox-logo.png') }}" alt="">
+      </div>
+      <div class="secondary">
+        {{ download_firefox(simple=true) }}
+      </div>
+    </li>
+    <li class="item promo-large-landscape festival" tabindex="0">
+      <h2 class="primary go">{{ _('Help us build a truly global Web') }}</h2>
+      <a href="http://2014.mozillafestival.org/">
+        <div class="secondary">
+          <h3>{{ _('Join us October 24–26 to help make a Web filled with <br>opportunity for all.') }}</h3>
+          <p class="more">{{ _('Come to the Mozilla Festival') }}</p>
+        </div>
+      </a>
+    </li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-small-landscape advocacy">
+      <a href="#">
+        <h2>{{ _('Meet the heroes of the Web') }}</h2>
+      </a>
+      <img src="{{ media('img/home/voices/promos/advocacy/logo.png') }}" alt="">
+    </li>
+    <li class="item promo-small-landscape open-news">
+      <a href="http://opennews.org/">
+        <h2>{{ _('Celebrate journalism on the open Web') }}</h2>
+      </a>
+    </li>
+    <li class="item promo-large-portrait sync" tabindex="0">
+      <h2 class="primary go">{{ _('Take your Web with you') }}</h2>
+      <a href="{{ url('firefox.sync') }}">
+        <div class="secondary">
+          <h3>{{ _('Access your bookmarks, tabs and more anywhere you use Firefox.') }}</h3>
+          <p class="more">{{ _('Get started with Sync') }}</p>
+        </div>
+      </a>
+    </li>
+    <li class="item promo-large-landscape net-nutrality" tabindex="0">
+      <h2 class="primary go">{{ _('Stand with Mozilla to protect net neutrality') }}</h2>
+      <a href="https://sendto.mozilla.org/page/s/protect-net-neutrality">
+        <div class="secondary">
+          <h3>Tell U.S. Congress to protect <br>a level playing field on the <br>open Web.</h3>
+          <p class="more">{{ _('Write to your legislator') }}</p>
+        </div>
+      </a>
+    </li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-spacer"></li>
+    <li class="item promo-small-landscape tweet">
+      <p>There are many ways to get involved in Mozilla! Here are some rangin from user support to&hellip;</p>
+    </li>
+    <li class="item promo-spacer"></li>
+  </ul>
+{% endblock %}

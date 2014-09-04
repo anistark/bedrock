@@ -1,0 +1,57 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import "../sandstone/lib.less";
+
+@widthSquareGrid_8: 1300px;
+@widthSquareGrid_7: 1140px;
+@widthSquareGrid_6: 980px;
+@widthSquareGrid_5: 820px;
+@widthSquareGrid_4: 660px;
+@widthSquareGrid_3: 500px;
+@widthSquareGrid_2: 340px;
+
+.mission {
+    .values {
+        li {
+            font-size: 24px;
+        }
+    }
+}
+
+.promo-large-landscape,
+.promo-large-portrait {
+
+    .category {
+        display: none;
+    }
+}
+
+.promo-large-portrait.sync {
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.promo-large-landscape.festival,
+.promo-large-landscape.net-nutrality {
+
+    h3 {
+        padding: (@baseLine * 2) @baseLine 0 @baseLine;
+    }
+}
+
+@media only screen and (min-width: @widthSquareGrid_7) and (max-width: (@widthSquareGrid_8 - 1)) {
+
+    .mission {
+        .values {
+
+            li {
+                padding: 0 @baseLine;
+                font-size: 20px;
+            }
+        }
+    }
+}

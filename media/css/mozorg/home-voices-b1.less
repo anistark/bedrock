@@ -73,7 +73,7 @@
 
     h2 {
         padding: (@baseLine * 4) @baseLine 0 @baseLine;
-        margin-bottom: @baseLine;
+        margin-bottom: @baseLine * 4;
         font-size: 36px;
         line-height: 1.2;
 
@@ -83,8 +83,14 @@
         }
     }
 
-    &.show h2.go:after {
-        .transform(rotate(-90deg));
+    &.show {
+        h2.go:after {
+            .transform(rotate(-90deg));
+        }
+
+        .more {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -112,11 +118,11 @@
         background-image: url('/media/img/home/voices/promos/festival/logo.png');
         background-position: center top;
         background-repeat: no-repeat;
-        padding: 120px @baseLine 0 @baseLine;
-        margin: -30px 0 0 0;
+        padding: 110px @baseLine 0 @baseLine;
+        margin: 10px 0 (@baseLine * 4) 0;
 
         &.go:after {
-            margin-left: -31px;
+            margin-left: -20px;
         }
     }
 }

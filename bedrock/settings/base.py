@@ -318,6 +318,10 @@ MINIFY_BUNDLES = {
             'css/mozorg/home-voices-common.less',
             'css/mozorg/home-voices-a1.less',
         ),
+        'home-voices-a1-b': (
+            'css/mozorg/home-voices-common.less',
+            'css/mozorg/home-voices-a1-b.less',
+        ),
         'home-voices-a2': (
             'css/mozorg/home-voices-common.less',
             'css/mozorg/home-voices-a2.less',

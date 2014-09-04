@@ -282,6 +282,8 @@ class HomeTestView(TemplateView):
 
         if version == 'a1':
             template = 'mozorg/home-voices-a1.html'
+        elif version == 'a1-b':
+            template = 'mozorg/home-voices-a1-b.html'
         elif version == 'a2':
             template = 'mozorg/home-voices-a2.html'
         elif version == 'b1':
