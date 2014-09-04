@@ -314,12 +314,17 @@ MINIFY_BUNDLES = {
         'home-ie': (
             'css/mozorg/home-ie.less',
         ),
-        'home-voices-a': (
+        'home-voices-a1': (
             'css/mozorg/home-voices-common.less',
+            'css/mozorg/home-voices-a1.less',
         ),
-        'home-voices-b': (
+        'home-voices-a2': (
             'css/mozorg/home-voices-common.less',
-            'css/mozorg/home-voices-b.less',
+            'css/mozorg/home-voices-a2.less',
+        ),
+        'home-voices-b1': (
+            'css/mozorg/home-voices-common.less',
+            'css/mozorg/home-voices-b1.less',
         ),
         'legal-eula': (
             'css/legal/eula.less',

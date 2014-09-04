@@ -263,7 +263,6 @@ class Robots(TemplateView):
 
 class HomeTestView(TemplateView):
     """Home page view that will use a different template for a QS."""
-    template_name = 'mozorg/home-voices-a.html'
 
     def post(self, request, *args, **kwargs):
         # required for newsletter form post that is handled in newsletter/helpers.py
@@ -277,6 +276,18 @@ class HomeTestView(TemplateView):
         ctx['mobilizer_link'] = settings.MOBILIZER_LOCALE_LINK[locale]
 
         return ctx
+
+    def get_template_names(self):
+        version = self.request.GET.get('version', '')
+
+        if version == 'a2':
+            template = 'mozorg/home-voices-a2.html'
+        elif version == 'b1':
+            template = 'mozorg/home-voices-b1.html'
+        else:
+            template = 'mozorg/home-voices-a1.html'
+
+        return [template]
 
     def render_to_response(self, context, **response_kwargs):
         return l10n_utils.render(self.request,

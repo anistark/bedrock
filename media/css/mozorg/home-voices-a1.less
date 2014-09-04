@@ -1,0 +1,27 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import "../sandstone/lib.less";
+
+.promo-large-landscape,
+.promo-large-portrait {
+
+    .category {
+        display: none;
+    }
+}
+
+.promo-large-portrait.sync {
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+.promo-large-landscape.festival {
+
+    h3 {
+        padding: (@baseLine * 2) @baseLine 0 @baseLine;
+    }
+}

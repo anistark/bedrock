@@ -1,0 +1,164 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import "../sandstone/lib.less";
+
+@widthSquareGrid_8: 1300px;
+@widthSquareGrid_7: 1140px;
+@widthSquareGrid_6: 980px;
+@widthSquareGrid_5: 820px;
+@widthSquareGrid_4: 660px;
+@widthSquareGrid_3: 500px;
+@widthSquareGrid_2: 340px;
+
+.promo-grid-inner {
+    .clearfix();
+}
+
+.promo-grid {
+    float: left;
+    width: 940px;
+}
+
+.promo-side-grid {
+    float: left;
+    width: 300px;
+    list-style-type: none;
+    margin: -40px 0 0 @baseLine;
+    padding: 0;
+
+    li {
+        margin: 0 0 @baseLine 0;
+        padding: 0;
+    }
+}
+
+.promo-large-landscape,
+.promo-large-portrait {
+    text-align: center;
+
+    &> a {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 5px solid transparent;
+        -webkit-transition: border .3s ease-in-out;
+                transition: border .3s ease-in-out;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .read {
+        display: inline-block;
+        min-width: 80px;
+        color: #fff;
+        font-size: 16px;
+        padding: 5px @baseLine;
+        text-transform: uppercase;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        .transition(border .2s ease-in-out);
+
+        &:hover {
+            border: 2px solid #fff;
+        }
+    }
+
+    h2 {
+        padding: (@baseLine * 4) @baseLine 0 @baseLine;
+        margin-bottom: @baseLine;
+        .open-sans;
+        font-size: 36px;
+        text-align: center;
+        line-height: 1.2;
+    }
+}
+
+.promo-large-portrait.voices-open-web {
+    background: #f28686;
+
+    &.show > a {
+        border: 5px solid #da6d6d;
+    }
+}
+
+.promo-large-landscape.festival {
+    background: #1f638c;
+
+    &.show > a {
+        border: 5px solid rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        background-image: url('/media/img/home/voices/promos/festival/logo.png');
+        background-position: center top;
+        background-repeat: no-repeat;
+        padding: 120px @baseLine 0 @baseLine;
+        margin: -30px 0 0 0;
+
+        &.go:after {
+            margin-left: -31px;
+        }
+    }
+}
+
+.promo-large-landscape.net-nutrality {
+    background: #6fb5b1;
+
+    &.show > a {
+        border: 5px solid #64a39f;
+    }
+}
+
+.promo-large-portrait.sync {
+
+    h2 {
+        margin-top: 0;
+    }
+}
+
+
+
+@media only screen and (max-width: (@widthSquareGrid_8 - 1)) {
+
+    .promo-side-grid {
+        float: left;
+        width: 100%;
+        margin: 0;
+    }
+
+}
+
+@media only screen and (min-width: @widthSquareGrid_6) and (max-width: (@widthSquareGrid_7 - 1)) {
+
+}
+
+@media only screen and (max-width: (@widthSquareGrid_6 - 1)) {
+
+    .promo-grid {
+        width: 100%;
+    }
+
+}
+
+@media only screen and (min-width: @widthSquareGrid_4) and (max-width: (@widthSquareGrid_5 - 1)) {
+
+}
+
+@media only screen and (min-width: @widthSquareGrid_3) and (max-width: (@widthSquareGrid_4 - 1)) {
+
+}
+
+@media only screen and (max-width: (@widthSquareGrid_3 - 1)) {
+
+}
+
+
