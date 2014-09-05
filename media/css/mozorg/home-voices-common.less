@@ -123,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .faces-grid-inner {
     position: absolute;
-    top: -20px;
+    top: 20px;
     left: 50%;
     bottom: 20px;
     margin-left: -(@widthSquareGrid_8 - (@gridGutterWidth * 2)) / 2;
@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .promo-grid {
     list-style-type: none;
-    margin: -40px 0 0;
+    margin: 0;
     padding: 0;
     .clearfix();
 
@@ -450,10 +450,25 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
-.promo-square,
+.promo-face,
 .promo-spacer {
     width: 140px;
     height: 140px;
+}
+
+.promo-face {
+    background-image: url(/media/img/home/voices/faces-color-sprite.jpg);
+    background-position: top left;
+    background-repeat: no-repeat;
+
+    &.face-01{ background-position: 0 0; }
+    &.face-02{ background-position: 0 -142px; }
+    &.face-03{ background-position: 0 -284px; }
+    &.face-04{ background-position: 0 -426px; }
+    &.face-05{ background-position: 0 -568px; }
+    &.face-06{ background-position: 0 -710px; }
+    &.face-07{ background-position: 0 -852px; }
+    &.face-08{ background-position: 0 -994px; }
 }
 
 /* Begin Individual promo item styles */
@@ -824,6 +839,7 @@ h1, h2, h3, h4, h5, h6 {
             color: #484848;
             text-align: center;
             margin-bottom: @baseLine * 2;
+            line-height: 1.3;
         }
 
         h3 {
@@ -831,6 +847,7 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 5px;
+            line-height: 1.3;
         }
 
         p {
@@ -866,6 +883,7 @@ h1, h2, h3, h4, h5, h6 {
             .open-sans;
             font-size: 14px;
             margin-bottom: @baseLine / 2;
+            text-align: left;
             &:after {
                 content: ':';
             }
@@ -987,11 +1005,17 @@ h1, h2, h3, h4, h5, h6 {
             &.selected {
                 display: block;
             }
+
+            h3 {
+                font-size: 28px;
+                margin-bottom: @baseLine;
+            }
         }
     }
 
     .all-articles {
         display: inline-block;
+        min-width: 200px;
         margin: (@baseLine * 2) auto 0 auto;
         padding: 15px (@baseLine * 2);
         line-height: 1.3;
@@ -1078,11 +1102,11 @@ h1, h2, h3, h4, h5, h6 {
 
     .contribute {
         display: inline-block;
-        margin: (@baseLine * 2) auto;
-        padding: 15px (@baseLine * 2);
+        margin: 0 auto (@baseLine * 2) auto;
+        padding: @baseLine (@baseLine * 4);
         line-height: 1.3;
         text-align: center;
-        text-transform: uppercase;
+        font-size: 24px;
         background: #0095dd;
         border-radius: 10px;
         .transition(all .2s ease-in-out);
@@ -1094,6 +1118,9 @@ h1, h2, h3, h4, h5, h6 {
 
         &:hover,
         &:focus {
+            background: #fff;
+            color: #0095dd;
+            text-decoration: none;
             cursor: pointer;
         }
     }
@@ -1289,6 +1316,7 @@ h1, h2, h3, h4, h5, h6 {
 
     .all-events {
         display: inline-block;
+        min-width: 200px;
         margin: 0 auto;
         padding: 15px (@baseLine * 2);
         line-height: 1.3;
@@ -2025,6 +2053,10 @@ h1, h2, h3, h4, h5, h6 {
                 margin: 0 auto (@baseLine * 2) auto;
             }
         }
+
+        .contribute {
+            width: 140px;
+        }
     }
 
     #newsletter-signup {
@@ -2213,7 +2245,7 @@ h1, h2, h3, h4, h5, h6 {
         }
 
         .contribute {
-            width: 200px;
+            width: 140px;
         }
     }
 
