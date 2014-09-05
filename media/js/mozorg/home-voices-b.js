@@ -23,7 +23,7 @@ $(function () {
     function initFacesGrid() {
         if (window.matchMedia) {
             // hide/disable pagers in mobile view
-            var queryIsMobile = matchMedia('(max-width: 500px)');
+            var queryIsMobile = matchMedia('(max-width: 980px)');
 
             if (!queryIsMobile.matches) {
                 showFaces(true);
@@ -47,7 +47,8 @@ $(function () {
         $('.faces-grid').masonry({
             columnWidth: 140,
             gutter: 20,
-            itemSelector: 'li'
+            itemSelector: 'li',
+            transitionDuration: 0
         });
 
         $promos.masonry({

@@ -4,6 +4,8 @@
 
 @import "../sandstone/lib.less";
 
+@widthSquareGrid_10: 1620px;
+@widthSquareGrid_9: 1460px;
 @widthSquareGrid_8: 1300px;
 @widthSquareGrid_7: 1140px;
 @widthSquareGrid_6: 980px;
@@ -111,6 +113,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     background: #fff;
     z-index: 0;
+    overflow: hidden;
 }
 
 .promo-grid-inner {
@@ -126,8 +129,8 @@ h1, h2, h3, h4, h5, h6 {
     top: 20px;
     left: 50%;
     bottom: 20px;
-    margin-left: -(@widthSquareGrid_8 - (@gridGutterWidth * 2)) / 2;
-    width: @widthSquareGrid_8 - (@gridGutterWidth * 2);
+    margin-left: -(@widthSquareGrid_10 - (@gridGutterWidth * 2)) / 2;
+    width: @widthSquareGrid_10 - (@gridGutterWidth * 2);
     overflow: hidden;
     z-index: -1;
 }
@@ -148,6 +151,7 @@ h1, h2, h3, h4, h5, h6 {
         background-image: url(/media/img/home/voices/faces-sprite.jpg);
         background-position: top left;
         background-repeat: no-repeat;
+        opacity: 0.5;
 
         &.face-001 { background-position: 0 0; }
         &.face-002 { background-position: 0 -142px; }
@@ -1481,8 +1485,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .faces-grid-inner {
-        width: @widthSquareGrid_7 - (@gridGutterWidth * 2);
-        margin-left: -550px;
+        width: @widthSquareGrid_9 - (@gridGutterWidth * 2);
+        margin-left: -(@widthSquareGrid_9 - (@gridGutterWidth * 2)) / 2;
     }
 
     .mission {
@@ -1583,8 +1587,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .faces-grid-inner {
-        width: @widthSquareGrid_6 - (@gridGutterWidth * 2);
-        margin-left: -470px;
+        width: @widthSquareGrid_8 - (@gridGutterWidth * 2);
+        margin-left: -(@widthSquareGrid_8 - (@gridGutterWidth * 2)) / 2;
     }
 
     .mission {
@@ -1693,8 +1697,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .faces-grid-inner {
-        width: @widthSquareGrid_5 - (@gridGutterWidth * 2);
-        margin-left: -390px;
+        width: @widthSquareGrid_7 - (@gridGutterWidth * 2);
+        margin-left: -(@widthSquareGrid_7 - (@gridGutterWidth * 2)) / 2;
     }
 
     .mission {
@@ -1721,6 +1725,25 @@ h1, h2, h3, h4, h5, h6 {
             &.stamp {
                 top: 0;
                 left: 480px;
+            }
+        }
+    }
+
+    .promo-large-landscape {
+        width: @widthSquareGrid_2 - (@gridGutterWidth * 2);
+        height: 460px;
+    }
+
+    .promo-large-landscape.festival {
+
+        h2 {
+            text-align: center;
+            background-image: none;
+            padding: (@baseLine * 4) (@baseLine * 2) (@baseLine / 2) (@baseLine * 2);
+            margin-left: 0;
+
+            &.go:after {
+                margin-left: -(20px);
             }
         }
     }
@@ -1802,8 +1825,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .faces-grid-inner {
-        width: @widthSquareGrid_4 - (@gridGutterWidth * 2);
-        margin-left: -310px;
+        width: @widthSquareGrid_6 - (@gridGutterWidth * 2);
+        margin-left: -(@widthSquareGrid_6 - (@gridGutterWidth * 2)) / 2;
     }
 
     .mission {
@@ -1823,6 +1846,25 @@ h1, h2, h3, h4, h5, h6 {
             &.stamp {
                 top: 0;
                 left: 320px;
+            }
+        }
+    }
+
+    .promo-large-landscape {
+        width: @widthSquareGrid_2 - (@gridGutterWidth * 2);
+        height: 460px;
+    }
+
+    .promo-large-landscape.festival {
+
+        h2 {
+            text-align: center;
+            background-image: none;
+            padding: (@baseLine * 4) (@baseLine * 2) (@baseLine / 2) (@baseLine * 2);
+            margin-left: 0;
+
+            &.go:after {
+                margin-left: -(20px);
             }
         }
     }
@@ -1914,8 +1956,8 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .faces-grid-inner {
-        width: @widthSquareGrid_3 - (@gridGutterWidth * 2);
-        margin-left: -230px;
+        width: @widthSquareGrid_5 - (@gridGutterWidth * 2);
+        margin-left: -(@widthSquareGrid_5 - (@gridGutterWidth * 2)) / 2;
     }
 
     .mission {

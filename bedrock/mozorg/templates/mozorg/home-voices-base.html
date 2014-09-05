@@ -65,6 +65,9 @@
         {% for i in range(1, 64)|list|shuffle %}
           <li class="{{'face-' ~ '%03d'|format(i)}}"></li>
         {% endfor %}
+        {% for i in range(1, 32)|list|shuffle %}
+          <li class="{{'face-' ~ '%03d'|format(i)}}"></li>
+        {% endfor %}
       </ul>
     </div>
   </section>
